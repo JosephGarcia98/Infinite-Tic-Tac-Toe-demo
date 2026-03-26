@@ -1,0 +1,125 @@
+body{
+	display: flex;
+	flex-direction: column; 
+	align-items: center;    
+	justify-content: center; 
+	height: 100vh;
+	background-color: rgb(106, 90, 205);
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+.gameBox {
+	background: rgba(255,255,255,0.1);
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.gameHeader {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.gameHeader h1 {
+	margin: 0;
+	font-size: 24px;
+}
+
+#status{
+	justify-content: center;
+}
+
+h1,h2{
+	color: white;
+	display: flex;
+}
+
+.board{
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    position: relative;
+}
+
+.box{
+	border: 2px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 100px;
+	cursor: pointer; 
+	border-color: white;
+	transition: background-color 0.2s ease
+	transform 0.1s ease;
+	color: white;
+}
+
+.box:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+
+button{
+    color: rgb(106, 90, 205);
+    border: none;
+    background: white;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 5px 5px; 
+    cursor: pointer;
+    font-family: "Poppins", Arial, sans-serif;
+    white-space: pre-line;
+    line-height: 1.1;
+    text-align: center;
+}
+
+button:active{
+    background: lightgrey;
+    color: rgb(90, 77, 174);
+    transform: scale(0.97);
+}
+
+.scoreBoard {
+	padding-top: 10px;
+	display: flex;
+	width: 300px;
+	margin: 0 auto;
+	color: white;
+	justify-content: center;
+}
+
+.buttonArea {
+    display: flex;
+    justify-content: center;
+    gap: 5px
+}
+
+#xPlayer, #oPlayer, #drawsLabel{
+	margin-left: 5px;
+}
+
+#xWins, #oWins, #drawCount{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.hidden{
+	display: none;
+}
+
+.box:nth-child(1),.box:nth-child(2),.box:nth-child(3){
+	border-top:none;
+}
+
+.box:nth-child(1),.box:nth-child(4),.box:nth-child(7){
+	border-left:none;
+}
+
+.box:nth-child(3),.box:nth-child(6),.box:nth-child(9){
+	border-right:none;
+}
+
+.box:nth-child(7),.box:nth-child(8),.box:nth-child(9){
+	border-bottom:none;
+}
