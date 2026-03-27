@@ -25,7 +25,7 @@ export function minimaxDecision(gameBoard) {
 	let currentUtility = -Infinity;
 	let emptyCellList = getValidMoves(gameBoard);
 	let bestMove = null;
-	let cutoff = 5;
+	let cutoff = emptyCellList;
 	let alpha = -Infinity;
 	let beta = Infinity;
 	for(let row of emptyCellList){
@@ -130,9 +130,9 @@ export function scoreGame(board){
 		let empty = line.filter(v => v === "").length;
 		if(oCount === 2 && empty === 1) score += 5;
 		if(xCount === 2 && empty === 1) score += 7;
-		if(board[4] === "O") score += 4;
-		if(board[4] === "X") score -= 4;
 	}
+	if(board[4] === "O") score += 4;
+	if(board[4] === "X") score -= 4;
 	let corners = [0,2,6,8];
 		for(let i of corners){
 			if (board[i] === "O") score += 1;
